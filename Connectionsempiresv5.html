@@ -1,0 +1,765 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connections That Build Empires | Business Matchmaking Reimagined</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;500;600;700&display=swap">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#442c1f',
+                        secondary: '#765f56',
+                        accent: '#c08081',
+                        light: '#faf9f8',
+                        dark: '#442c1f',
+                    },
+                    fontFamily: {
+                        display: ['Playfair Display', 'serif'],
+                        body: ['Montserrat', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            scroll-behavior: smooth;
+            background-color: #faf9f8;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+        .hero-gradient {
+            background: linear-gradient(135deg, #c08081 0%, #765f56 100%);
+        }
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .industry-card {
+            transition: all 0.3s ease;
+            background-size: cover;
+            background-position: center;
+        }
+        .industry-card:hover {
+            transform: scale(1.03);
+        }
+        .btn-primary {
+            background: linear-gradient(135deg, #c08081 0%, #765f56 100%);
+            transition: all 0.3s ease;
+        }
+        .btn-primary:hover {
+            opacity: 0.9;
+            transform: translateY(-2px);
+        }
+        .btn-secondary {
+            transition: all 0.3s ease;
+        }
+        .btn-secondary:hover {
+            background-color: #442c1f;
+            color: white;
+        }
+        .testimonial-card {
+            position: relative;
+        }
+        .testimonial-card::before {
+            content: '"';
+            position: absolute;
+            top: -10px;
+            left: 20px;
+            font-size: 80px;
+            font-family: 'Playfair Display', serif;
+            color: rgba(192, 128, 129, 0.1);
+            z-index: 0;
+        }
+        .step-card {
+            position: relative;
+        }
+        .step-card::after {
+            content: '';
+            position: absolute;
+            bottom: -30px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 2px;
+            height: 30px;
+            background-color: #c08081;
+            z-index: 0;
+        }
+        .step-card:last-child::after {
+            display: none;
+        }
+        input:focus, textarea:focus {
+            outline: none;
+            border-color: #c08081;
+            box-shadow: 0 0 0 3px rgba(192, 128, 129, 0.2);
+        }
+        .about-section {
+            background-color: #faf9f8;
+        }
+        .about-image {
+            background: linear-gradient(135deg, #c08081 0%, #765f56 100%);
+        }
+    </style>
+</head>
+<body class="bg-light text-primary">
+    <!-- Navigation -->
+    <nav class="fixed w-full bg-white bg-opacity-95 shadow-sm z-50">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-display font-bold" style="background: linear-gradient(135deg, #c08081 0%, #442c1f 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Mahaya.com</a>
+            <div class="hidden md:flex space-x-8">
+                <a href="#approach" class="font-medium hover:text-accent transition-colors">Our Approach</a>
+                <a href="#process" class="font-medium hover:text-accent transition-colors">Process</a>
+                <a href="#visionaries" class="font-medium hover:text-accent transition-colors">Who We Match</a>
+                <a href="#industries" class="font-medium hover:text-accent transition-colors">Industries</a>
+                <a href="#events" class="font-medium hover:text-accent transition-colors">Events</a>
+                <a href="#testimonials" class="font-medium hover:text-accent transition-colors">Testimonials</a>
+                <a href="#contact" class="font-medium hover:text-accent transition-colors">Connect</a>
+                <a href="#about" class="font-medium hover:text-accent transition-colors">About</a>
+            </div>
+            <div class="md:hidden">
+                <button id="menu-toggle" class="focus:outline-none">
+                    <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white w-full">
+            <div class="container mx-auto px-6 py-4 flex flex-col space-y-4">
+                <a href="#approach" class="font-medium hover:text-accent transition-colors">Our Approach</a>
+                <a href="#process" class="font-medium hover:text-accent transition-colors">Process</a>
+                <a href="#visionaries" class="font-medium hover:text-accent transition-colors">Who We Match</a>
+                <a href="#industries" class="font-medium hover:text-accent transition-colors">Industries</a>
+                <a href="#events" class="font-medium hover:text-accent transition-colors">Events</a>
+                <a href="#testimonials" class="font-medium hover:text-accent transition-colors">Testimonials</a>
+                <a href="#contact" class="font-medium hover:text-accent transition-colors">Connect</a>
+                <a href="#about" class="font-medium hover:text-accent transition-colors">About</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-gradient text-white pt-32 pb-20 px-6">
+        <div class="container mx-auto max-w-6xl">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="space-y-8">
+                    <h1 class="text-5xl md:text-6xl font-display font-bold leading-tight">Connections That Build Empires</h1>
+                    <p class="text-xl md:text-2xl font-light leading-relaxed">Business matchmaking reimagined. We connect founders, investors, creatives, and executives through purposeful, strategic relationships that accelerate growth and impact.</p>
+                    <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-6 pt-4">
+                        <a href="#contact" class="btn-primary px-8 py-4 rounded-lg font-semibold text-center text-white shadow-lg">Apply for Matchmaking</a>
+                        <a href="https://calendly.com/mahaya-advanceflow/30min?back" target="_blank" class="btn-secondary px-8 py-4 rounded-lg font-semibold text-center bg-white text-primary border border-white">Book a Discovery Call</a>
+                    </div>
+                </div>
+                <div class="hidden md:block">
+                    <svg class="w-full" viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#ffffff;stop-opacity:0.2" />
+                                <stop offset="100%" style="stop-color:#ffffff;stop-opacity:0.05" />
+                            </linearGradient>
+                        </defs>
+                        <circle cx="250" cy="250" r="200" fill="url(#grad1)" />
+                        <g fill="none" stroke="white" stroke-width="2">
+                            <path d="M150,150 L350,350" />
+                            <path d="M150,350 L350,150" />
+                            <circle cx="150" cy="150" r="20" />
+                            <circle cx="350" cy="350" r="20" />
+                            <circle cx="150" cy="350" r="20" />
+                            <circle cx="350" cy="150" r="20" />
+                            <circle cx="250" cy="250" r="40" />
+                        </g>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- The Mahaya Way -->
+    <section id="approach" class="py-20 px-6 bg-white">
+        <div class="container mx-auto max-w-6xl">
+            <h2 class="text-4xl font-display font-bold text-center mb-16">The Mahaya Way</h2>
+            <div class="grid md:grid-cols-3 gap-10">
+                <div class="card-hover bg-light p-8 rounded-xl">
+                    <div class="w-16 h-16 bg-accent bg-opacity-10 rounded-full flex items-center justify-center mb-6">
+                        <svg class="w-8 h-8 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-display font-bold mb-4">Personal Approach</h3>
+                    <p class="text-secondary leading-relaxed">We believe business is personal. The Mahaya Way blends emotional intelligence, strategic intuition, and deep listening to create intentional introductions.</p>
+                </div>
+                
+                <div class="card-hover bg-light p-8 rounded-xl">
+                    <div class="w-16 h-16 bg-accent bg-opacity-10 rounded-full flex items-center justify-center mb-6">
+                        <svg class="w-8 h-8 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-display font-bold mb-4">Customized Connections</h3>
+                    <p class="text-secondary leading-relaxed">Every connection is customized and curated to align not just with business goals, but with vision, values, and timing.</p>
+                </div>
+                
+                <div class="card-hover bg-light p-8 rounded-xl">
+                    <div class="w-16 h-16 bg-accent bg-opacity-10 rounded-full flex items-center justify-center mb-6">
+                        <svg class="w-8 h-8 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-display font-bold mb-4">Quality Over Quantity</h3>
+                    <p class="text-secondary leading-relaxed">We don't play in quantity. We play in alignment.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Get Matched With Purpose -->
+    <section id="process" class="py-20 px-6 bg-light">
+        <div class="container mx-auto max-w-6xl">
+            <h2 class="text-4xl font-display font-bold text-center mb-16">Get Matched With Purpose</h2>
+            <div class="flex flex-col items-center">
+                <div class="grid md:grid-cols-3 gap-10 w-full">
+                    <div class="step-card card-hover bg-white p-8 rounded-xl shadow-sm relative">
+                        <div class="w-16 h-16 bg-accent bg-opacity-10 rounded-full flex items-center justify-center mb-6">
+                            <span class="text-2xl font-bold text-accent">1</span>
+                        </div>
+                        <h3 class="text-2xl font-display font-bold mb-4">Tell Us About You</h3>
+                        <p class="text-secondary leading-relaxed">Complete our application form with your details, goals, and what connections would serve you best.</p>
+                    </div>
+                    
+                    <div class="step-card card-hover bg-white p-8 rounded-xl shadow-sm relative">
+                        <div class="w-16 h-16 bg-accent bg-opacity-10 rounded-full flex items-center justify-center mb-6">
+                            <span class="text-2xl font-bold text-accent">2</span>
+                        </div>
+                        <h3 class="text-2xl font-display font-bold mb-4">Discovery Conversation</h3>
+                        <p class="text-secondary leading-relaxed">We'll schedule a call to understand your vision, values, and ideal partnerships.</p>
+                    </div>
+                    
+                    <div class="step-card card-hover bg-white p-8 rounded-xl shadow-sm relative">
+                        <div class="w-16 h-16 bg-accent bg-opacity-10 rounded-full flex items-center justify-center mb-6">
+                            <span class="text-2xl font-bold text-accent">3</span>
+                        </div>
+                        <h3 class="text-2xl font-display font-bold mb-4">Curated Introductions</h3>
+                        <p class="text-secondary leading-relaxed">Receive thoughtfully matched connections aligned with your business objectives.</p>
+                    </div>
+                </div>
+                
+                <div class="mt-16">
+                    <a href="#contact" class="btn-primary px-8 py-4 rounded-lg font-semibold text-center text-white shadow-lg">Start Your Journey</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- We Match Visionaries -->
+    <section id="visionaries" class="py-20 px-6 bg-white">
+        <div class="container mx-auto max-w-6xl">
+            <h2 class="text-4xl font-display font-bold text-center mb-16">We Match Visionaries</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="card-hover bg-light p-8 rounded-xl shadow-sm">
+                    <div class="w-16 h-16 bg-accent bg-opacity-10 rounded-full flex items-center justify-center mb-6">
+                        <svg class="w-8 h-8 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Founders & Entrepreneurs</h3>
+                    <p class="text-secondary">Scaling purpose-driven businesses</p>
+                </div>
+                
+                <div class="card-hover bg-light p-8 rounded-xl shadow-sm">
+                    <div class="w-16 h-16 bg-accent bg-opacity-10 rounded-full flex items-center justify-center mb-6">
+                        <svg class="w-8 h-8 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Investors</h3>
+                    <p class="text-secondary">Seeking meaningful deal flow</p>
+                </div>
+                
+                <div class="card-hover bg-light p-8 rounded-xl shadow-sm">
+                    <div class="w-16 h-16 bg-accent bg-opacity-10 rounded-full flex items-center justify-center mb-6">
+                        <svg class="w-8 h-8 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Creatives & Artists</h3>
+                    <p class="text-secondary">Wanting aligned growth opportunities</p>
+                </div>
+                
+                <div class="card-hover bg-light p-8 rounded-xl shadow-sm">
+                    <div class="w-16 h-16 bg-accent bg-opacity-10 rounded-full flex items-center justify-center mb-6">
+                        <svg class="w-8 h-8 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Executives & Leaders</h3>
+                    <p class="text-secondary">Looking to collaborate, hire, or expand their reach</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Industries -->
+    <section id="industries" class="py-20 px-6 bg-light">
+        <div class="container mx-auto max-w-6xl">
+            <h2 class="text-4xl font-display font-bold text-center mb-16">Industries We Work With</h2>
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                <div class="industry-card rounded-xl h-48 flex items-center justify-center p-6 text-center" style="background: linear-gradient(135deg, #765f56 0%, #c08081 100%);">
+                    <h3 class="text-xl font-bold text-white">Tech & Innovation</h3>
+                </div>
+                <div class="industry-card rounded-xl h-48 flex items-center justify-center p-6 text-center" style="background: linear-gradient(135deg, #442c1f 0%, #765f56 100%);">
+                    <h3 class="text-xl font-bold text-white">Wellness & Lifestyle</h3>
+                </div>
+                <div class="industry-card rounded-xl h-48 flex items-center justify-center p-6 text-center" style="background: linear-gradient(135deg, #c08081 0%, #765f56 100%);">
+                    <h3 class="text-xl font-bold text-white">Fashion & Beauty</h3>
+                </div>
+                <div class="industry-card rounded-xl h-48 flex items-center justify-center p-6 text-center" style="background: linear-gradient(135deg, #765f56 0%, #442c1f 100%);">
+                    <h3 class="text-xl font-bold text-white">Creative Arts & Media</h3>
+                </div>
+                <div class="industry-card rounded-xl h-48 flex items-center justify-center p-6 text-center" style="background: linear-gradient(135deg, #442c1f 0%, #c08081 100%);">
+                    <h3 class="text-xl font-bold text-white">Finance & Impact Investing</h3>
+                </div>
+                <div class="industry-card rounded-xl h-48 flex items-center justify-center p-6 text-center" style="background: linear-gradient(135deg, #c08081 0%, #442c1f 100%);">
+                    <h3 class="text-xl font-bold text-white">Hospitality & Experiences</h3>
+                </div>
+                <div class="industry-card rounded-xl h-48 flex items-center justify-center p-6 text-center" style="background: linear-gradient(135deg, #765f56 0%, #c08081 100%);">
+                    <h3 class="text-xl font-bold text-white">Education & Personal Development</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Events -->
+    <section id="events" class="py-20 px-6 bg-white">
+        <div class="container mx-auto max-w-6xl">
+            <h2 class="text-4xl font-display font-bold text-center mb-6">Where Connections Come to Life</h2>
+            <p class="text-xl text-center text-secondary mb-16 max-w-3xl mx-auto">No name tags. No pitching. Just authentic connection with the right people, in the right room.</p>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="card-hover bg-light p-8 rounded-xl shadow-sm">
+                    <div class="w-16 h-16 bg-accent bg-opacity-10 rounded-full flex items-center justify-center mb-6">
+                        <svg class="w-8 h-8 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 15.546c-.523 0-1.046.151-1.5.454a2.704 2.704 0 01-3 0 2.704 2.704 0 00-3 0 2.704 2.704 0 01-3 0 2.704 2.704 0 00-3 0 2.704 2.704 0 01-3 0 2.701 2.701 0 00-1.5-.454M9 6v2m3-2v2m3-2v2M9 3h.01M12 3h.01M15 3h.01M21 21v-7a2 2 0 00-2-2H5a2 2 0 00-2 2v7h18zm-3-9v-2a2 2 0 00-2-2H8a2 2 0 00-2 2v2h12z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Private Dinners</h3>
+                    <p class="text-secondary">Intimate gatherings for meaningful connections</p>
+                </div>
+                
+                <div class="card-hover bg-light p-8 rounded-xl shadow-sm">
+                    <div class="w-16 h-16 bg-accent bg-opacity-10 rounded-full flex items-center justify-center mb-6">
+                        <svg class="w-8 h-8 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Founder & Investor Mixers</h3>
+                    <p class="text-secondary">Curated networking for business growth</p>
+                </div>
+                
+                <div class="card-hover bg-light p-8 rounded-xl shadow-sm">
+                    <div class="w-16 h-16 bg-accent bg-opacity-10 rounded-full flex items-center justify-center mb-6">
+                        <svg class="w-8 h-8 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Industry-Specific Panels</h3>
+                    <p class="text-secondary">Insights from thought leaders</p>
+                </div>
+                
+                <div class="card-hover bg-light p-8 rounded-xl shadow-sm">
+                    <div class="w-16 h-16 bg-accent bg-opacity-10 rounded-full flex items-center justify-center mb-6">
+                        <svg class="w-8 h-8 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Roundtables & Think Tanks</h3>
+                    <p class="text-secondary">Collaborative problem-solving sessions</p>
+                </div>
+                
+                <div class="card-hover bg-light p-8 rounded-xl shadow-sm">
+                    <div class="w-16 h-16 bg-accent bg-opacity-10 rounded-full flex items-center justify-center mb-6">
+                        <svg class="w-8 h-8 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h.5A2.5 2.5 0 0020 5.5v-1.65M12 14.5V17m0 0v2.5M12 17h2.5M12 17h-2.5"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">International Retreats</h3>
+                    <p class="text-secondary">Coming Soon</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Join Our Private Network -->
+    <section class="py-20 px-6 bg-light">
+        <div class="container mx-auto max-w-6xl">
+            <h2 class="text-4xl font-display font-bold text-center mb-16">Join Our Private Network</h2>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="card-hover bg-white p-8 rounded-xl shadow-sm">
+                    <div class="w-16 h-16 bg-accent bg-opacity-10 rounded-full flex items-center justify-center mb-6">
+                        <svg class="w-8 h-8 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Priority Matching</h3>
+                    <p class="text-secondary">Curated introductions tailored to your specific needs</p>
+                </div>
+                
+                <div class="card-hover bg-white p-8 rounded-xl shadow-sm">
+                    <div class="w-16 h-16 bg-accent bg-opacity-10 rounded-full flex items-center justify-center mb-6">
+                        <svg class="w-8 h-8 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Exclusive Events</h3>
+                    <p class="text-secondary">Private dinners and mixers with high-caliber professionals</p>
+                </div>
+                
+                <div class="card-hover bg-white p-8 rounded-xl shadow-sm">
+                    <div class="w-16 h-16 bg-accent bg-opacity-10 rounded-full flex items-center justify-center mb-6">
+                        <svg class="w-8 h-8 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Early Access</h3>
+                    <p class="text-secondary">First invitations to limited-capacity experiences</p>
+                </div>
+                
+                <div class="card-hover bg-white p-8 rounded-xl shadow-sm">
+                    <div class="w-16 h-16 bg-accent bg-opacity-10 rounded-full flex items-center justify-center mb-6">
+                        <svg class="w-8 h-8 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Network Insights</h3>
+                    <p class="text-secondary">Briefings and opportunities from our exclusive community</p>
+                </div>
+            </div>
+            
+            <div class="mt-16 text-center">
+                <a href="#contact" class="btn-primary px-8 py-4 rounded-lg font-semibold text-center text-white shadow-lg">Apply to Join</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="py-20 px-6 bg-white">
+        <div class="container mx-auto max-w-6xl">
+            <div class="bg-accent bg-opacity-5 p-10 rounded-2xl">
+                <div class="max-w-3xl mx-auto text-center">
+                    <h2 class="text-3xl font-display font-bold mb-6">Stay in the Loop</h2>
+                    <p class="text-secondary mb-8">Our monthly newsletter delivers curated insights, event invitations, business tips, and member spotlights directly to your inbox. Get first access to new opportunities and private experiences.</p>
+                    
+                    <form id="newsletter-form" class="flex flex-col md:flex-row gap-4">
+                        <input type="email" placeholder="Your email address" class="flex-grow px-6 py-4 rounded-lg border border-gray-300 focus:border-accent" required>
+                        <button type="submit" class="btn-primary px-8 py-4 rounded-lg font-semibold text-white shadow-lg">Subscribe</button>
+                    </form>
+                    <p class="text-xs text-secondary mt-4">We respect your privacy. Unsubscribe at any time.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section id="testimonials" class="py-20 px-6 bg-light">
+        <div class="container mx-auto max-w-6xl">
+            <h2 class="text-4xl font-display font-bold text-center mb-16">Real Matches. Real Impact.</h2>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="testimonial-card card-hover bg-white p-8 rounded-xl shadow-sm">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 bg-accent bg-opacity-10 rounded-full flex items-center justify-center mr-4">
+                            <span class="text-xl font-bold text-accent">A</span>
+                        </div>
+                        <div>
+                            <h4 class="font-bold">Fashion Tech Success</h4>
+                            <p class="text-sm text-secondary">A.F.</p>
+                        </div>
+                    </div>
+                    <p class="text-secondary italic">"One curated dinner. Two strangers. Now co-founders of a 7-figure brand. Mahaya doesn't just connect people-she builds bridges that last."</p>
+                </div>
+                
+                <div class="testimonial-card card-hover bg-white p-8 rounded-xl shadow-sm">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 bg-accent bg-opacity-10 rounded-full flex items-center justify-center mr-4">
+                            <span class="text-xl font-bold text-accent">R</span>
+                        </div>
+                        <div>
+                            <h4 class="font-bold">Investment Win</h4>
+                            <p class="text-sm text-secondary">R.K.</p>
+                        </div>
+                    </div>
+                    <p class="text-secondary italic">"Mahaya introduced me to my first angel investor. I closed $250K within 30 days. But more importantly, I gained a true strategic partner."</p>
+                </div>
+                
+                <div class="testimonial-card card-hover bg-white p-8 rounded-xl shadow-sm">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 bg-accent bg-opacity-10 rounded-full flex items-center justify-center mr-4">
+                            <span class="text-xl font-bold text-accent">J</span>
+                        </div>
+                        <div>
+                            <h4 class="font-bold">Creative Connection</h4>
+                            <p class="text-sm text-secondary">J.L.</p>
+                        </div>
+                    </div>
+                    <p class="text-secondary italic">"The energy at her events is unmatched—authentic, curated, magnetic. These are the rooms I want to be in."</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Let's Connect -->
+    <section id="contact" class="py-20 px-6 hero-gradient text-white">
+        <div class="container mx-auto max-w-6xl">
+            <h2 class="text-4xl font-display font-bold text-center mb-16">Let's Connect</h2>
+            
+            <div class="grid md:grid-cols-3 gap-8 mb-16">
+                <div class="card-hover bg-white bg-opacity-10 backdrop-filter backdrop-blur-lg p-8 rounded-xl">
+                    <div class="w-16 h-16 bg-white bg-opacity-20 rounded-full flex items-center justify-center mb-6">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Founder / Entrepreneur</h3>
+                    <p class="text-white text-opacity-80 mb-6">Looking to grow, scale, or meet aligned strategic partners.</p>
+                    <a href="#contact-form" class="btn-secondary w-full px-6 py-3 rounded-lg font-semibold text-center bg-white text-primary border border-white block">Apply Now</a>
+                </div>
+                
+                <div class="card-hover bg-white bg-opacity-10 backdrop-filter backdrop-blur-lg p-8 rounded-xl">
+                    <div class="w-16 h-16 bg-white bg-opacity-20 rounded-full flex items-center justify-center mb-6">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Creative / Artist / Brand</h3>
+                    <p class="text-white text-opacity-80 mb-6">Ready to collaborate, elevate visibility, or find purpose-driven partnerships.</p>
+                    <a href="#contact-form" class="btn-secondary w-full px-6 py-3 rounded-lg font-semibold text-center bg-white text-primary border border-white block">Apply Now</a>
+                </div>
+                
+                <div class="card-hover bg-white bg-opacity-10 backdrop-filter backdrop-blur-lg p-8 rounded-xl">
+                    <div class="w-16 h-16 bg-white bg-opacity-20 rounded-full flex items-center justify-center mb-6">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Investor / Executive</h3>
+                    <p class="text-white text-opacity-80 mb-6">Interested in deal flow, emerging talent, or curated networking experiences.</p>
+                    <a href="#contact-form" class="btn-secondary w-full px-6 py-3 rounded-lg font-semibold text-center bg-white text-primary border border-white block">Apply Now</a>
+                </div>
+            </div>
+            
+            <!-- Contact Form -->
+            <div id="contact-form" class="bg-white bg-opacity-10 backdrop-filter backdrop-blur-lg p-10 rounded-xl max-w-3xl mx-auto">
+                <h3 class="text-2xl font-display font-bold mb-8 text-center">Apply for Matchmaking</h3>
+                
+                <form id="application-form" class="space-y-6">
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-white text-opacity-80 mb-2 text-sm">First Name*</label>
+                            <input type="text" class="w-full px-4 py-3 rounded-lg bg-white bg-opacity-20 border border-white border-opacity-20 text-white placeholder-white placeholder-opacity-60" placeholder="Your first name" required>
+                        </div>
+                        <div>
+                            <label class="block text-white text-opacity-80 mb-2 text-sm">Last Name*</label>
+                            <input type="text" class="w-full px-4 py-3 rounded-lg bg-white bg-opacity-20 border border-white border-opacity-20 text-white placeholder-white placeholder-opacity-60" placeholder="Your last name" required>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <label class="block text-white text-opacity-80 mb-2 text-sm">Email Address*</label>
+                        <input type="email" class="w-full px-4 py-3 rounded-lg bg-white bg-opacity-20 border border-white border-opacity-20 text-white placeholder-white placeholder-opacity-60" placeholder="Your email address" required>
+                    </div>
+                    
+                    <div>
+                        <label class="block text-white text-opacity-80 mb-2 text-sm">Phone Number</label>
+                        <input type="tel" class="w-full px-4 py-3 rounded-lg bg-white bg-opacity-20 border border-white border-opacity-20 text-white placeholder-white placeholder-opacity-60" placeholder="Your phone number">
+                    </div>
+                    
+                    <div>
+                        <label class="block text-white text-opacity-80 mb-2 text-sm">I am a*</label>
+                        <select class="w-full px-4 py-3 rounded-lg bg-white bg-opacity-20 border border-white border-opacity-20 text-white" required>
+                            <option value="" disabled selected class="text-gray-800">Select your role</option>
+                            <option value="founder" class="text-gray-800">Founder / Entrepreneur</option>
+                            <option value="creative" class="text-gray-800">Creative / Artist / Brand</option>
+                            <option value="investor" class="text-gray-800">Investor / Executive</option>
+                            <option value="other" class="text-gray-800">Other</option>
+                        </select>
+                    </div>
+                    
+                    <div>
+                        <label class="block text-white text-opacity-80 mb-2 text-sm">What connections would serve you best right now?*</label>
+                        <textarea class="w-full px-4 py-3 rounded-lg bg-white bg-opacity-20 border border-white border-opacity-20 text-white placeholder-white placeholder-opacity-60 h-32" placeholder="Please describe the types of connections you're looking for..." required></textarea>
+                    </div>
+                    
+                    <div>
+                        <label class="block text-white text-opacity-80 mb-2 text-sm">How did you hear about us?</label>
+                        <input type="text" class="w-full px-4 py-3 rounded-lg bg-white bg-opacity-20 border border-white border-opacity-20 text-white placeholder-white placeholder-opacity-60" placeholder="Referral, social media, event, etc.">
+                    </div>
+                    
+                    <div class="text-center pt-4">
+                        <button type="submit" class="btn-primary px-10 py-4 rounded-lg font-semibold text-white shadow-lg">Submit Application</button>
+                    </div>
+                </form>
+            </div>
+            
+            <div class="mt-16 text-center">
+                <p class="mb-6 text-white text-opacity-80">Prefer to talk first?</p>
+                <a href="https://calendly.com/mahaya-advanceflow/30min?back" target="_blank" class="btn-secondary inline-block px-8 py-4 rounded-lg font-semibold text-center bg-white text-primary border border-white">Book a Discovery Call</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section py-20 px-6">
+        <div class="container mx-auto max-w-6xl">
+            <h2 class="text-4xl font-display font-bold text-center mb-16">About Mahaya</h2>
+            
+            <div class="grid md:grid-cols-3 gap-12 items-start">
+                <div class="md:col-span-1">
+                    <div class="about-image rounded-xl overflow-hidden h-full flex items-center justify-center p-8">
+                        <div class="text-center">
+                            <svg class="w-32 h-32 mx-auto text-white mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            </svg>
+                            <h3 class="text-2xl font-display font-bold text-white mb-2">Mahaya Boicel</h3>
+                            <p class="text-white text-opacity-90">Curated Business Matchmaker & Strategic Consultant</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="md:col-span-2 space-y-6">
+                    <p class="text-lg leading-relaxed">With over two decades of experience in business management, customer service, promotion, and entrepreneurial leadership, Mahaya Boicel brings a rare combination of emotional intelligence, street-savvy strategy, and visionary insight to the world of business matchmaking and consulting.</p>
+                    
+                    <p class="leading-relaxed">Mahaya began her career building and managing businesses across the wellness, creative, and service industries. Her journey includes founding and operating a successful health and wellness clinic in Montreal, where she developed a reputation for connecting people across industries and creating growth opportunities through collaboration. After closing the clinic, Mahaya transformed her setback into a rebirth—refining her natural gift for forging meaningful business relationships and curating strategic partnerships that produce real results.</p>
+                    
+                    <p class="leading-relaxed">Now, as a Curated Business Matchmaker, Mahaya leverages her instinctive people-reading skills and wide-reaching network to connect entrepreneurs, creatives, investors, and organizations with the right allies to move their visions forward. She works across a range of industries—including tech, blockchain, music and entertainment, and health and wellness—bringing cross-sector insight and a deep understanding of how innovation, culture, and community intersect.</p>
+                    
+                    <p class="leading-relaxed">Her services extend into strategic business consulting, helping clients refine their positioning, align their values with their business models, and build strategies that reflect both purpose and profitability. Her lived experience, from personal reinvention to business revival, adds depth to her counsel and authenticity to her voice.</p>
+                    
+                    <p class="leading-relaxed">A powerful communicator and sought-after moderator and panelist, Mahaya is known for facilitating honest dialogue, asking the right questions, and drawing out the deeper motivations that drive founders, creatives, and changemakers.</p>
+                    
+                    <p class="leading-relaxed">Whether in the boardroom, on stage, or behind the scenes, Mahaya operates with clarity, warmth, and a bold commitment to excellence. She is currently focused on expanding her work internationally, particularly within the Afro-diaspora, creative economies, and emerging entrepreneurship hubs.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-12 px-6">
+        <div class="container mx-auto max-w-6xl">
+            <div class="grid md:grid-cols-3 gap-10">
+                <div>
+                    <h3 class="text-2xl font-display font-bold mb-4" style="background: linear-gradient(135deg, #c08081 0%, #faf9f8 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Mahaya.com</h3>
+                    <p class="text-white text-opacity-70">Business matchmaking reimagined.</p>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#approach" class="text-white text-opacity-70 hover:text-opacity-100 transition-colors">Our Approach</a></li>
+                        <li><a href="#process" class="text-white text-opacity-70 hover:text-opacity-100 transition-colors">Process</a></li>
+                        <li><a href="#visionaries" class="text-white text-opacity-70 hover:text-opacity-100 transition-colors">Who We Match</a></li>
+                        <li><a href="#industries" class="text-white text-opacity-70 hover:text-opacity-100 transition-colors">Industries</a></li>
+                        <li><a href="#events" class="text-white text-opacity-70 hover:text-opacity-100 transition-colors">Events</a></li>
+                        <li><a href="#testimonials" class="text-white text-opacity-70 hover:text-opacity-100 transition-colors">Testimonials</a></li>
+                        <li><a href="#about" class="text-white text-opacity-70 hover:text-opacity-100 transition-colors">About</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Connect</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-white text-opacity-70 hover:text-opacity-100 transition-colors">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M22.675 0h-21.35c-.732 0-1.325.593-1.325 1.325v21.351c0 .731.593 1.324 1.325 1.324h11.495v-9.294h-3.128v-3.622h3.128v-2.671c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12v9.293h6.116c.73 0 1.323-.593 1.323-1.325v-21.35c0-.732-.593-1.325-1.325-1.325z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="text-white text-opacity-70 hover:text-opacity-100 transition-colors">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm6.066 9.645c.183 4.04-2.83 8.544-8.164 8.544-1.622 0-3.131-.476-4.402-1.291 1.524.18 3.045-.244 4.252-1.189-1.256-.023-2.317-.854-2.684-1.995.451.086.895.061 1.298-.049-1.381-.278-2.335-1.522-2.304-2.853.388.215.83.344 1.301.359-1.279-.855-1.641-2.544-.889-3.835 1.416 1.738 3.533 2.881 5.92 3.001-.419-1.796.944-3.527 2.799-3.527.825 0 1.572.349 2.096.907.654-.128 1.27-.368 1.824-.697-.215.671-.67 1.233-1.263 1.589.581-.07 1.135-.224 1.649-.453-.384.578-.87 1.084-1.433 1.489z"/>
+                            </svg>
+                        </a>
+                        <a href="https://www.linkedin.com/in/boicelmahaya?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" target="_blank" class="text-white text-opacity-70 hover:text-opacity-100 transition-colors">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm-2 16h-2v-6h2v6zm-1-6.891c-.607 0-1.1-.496-1.1-1.109 0-.612.492-1.109 1.1-1.109s1.1.497 1.1 1.109c0 .613-.493 1.109-1.1 1.109zm8 6.891h-1.998v-2.861c0-1.881-2.002-1.722-2.002 0v2.861h-2v-6h2v1.093c.872-1.616 4-1.736 4 1.548v3.359z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="text-white text-opacity-70 hover:text-opacity-100 transition-colors">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm4.441 16.892c-2.102.144-6.784.144-8.883 0-2.276-.156-2.541-1.27-2.558-4.892.017-3.629.285-4.736 2.558-4.892 2.099-.144 6.782-.144 8.883 0 2.277.156 2.541 1.27 2.559 4.892-.018 3.629-.285 4.736-2.559 4.892zm-6.441-7.234l4.917 2.338-4.917 2.346v-4.684z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-white border-opacity-20 mt-10 pt-6 text-center text-white text-opacity-60">
+                <p>&copy; 2023 Mahaya. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        menuToggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                    }
+                }
+            });
+        });
+        
+        // Add scroll event for navbar styling
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                nav.classList.add('shadow');
+            } else {
+                nav.classList.remove('shadow');
+            }
+        });
+        
+        // Newsletter form submission
+        document.getElementById('newsletter-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const email = this.querySelector('input[type="email"]').value;
+            alert(`Thank you! ${email} has been added to our newsletter list.`);
+            this.reset();
+        });
+        
+        // Application form submission
+        document.getElementById('application-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your application! We will be in touch soon.');
+            this.reset();
+        });
+    </script>
+</body>
+</html>
